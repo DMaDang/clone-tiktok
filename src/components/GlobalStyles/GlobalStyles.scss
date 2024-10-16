@@ -2,15 +2,27 @@
 
 :root{
     --primary: #fe2c55;
+    --black: #000;
+    --white: #fff;
+    --default-layout-header-height: 60px;
+    --default-layout-wdith: 1150px;
 }
 
 html{
     font-size: 62.5%;
 }
 *{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 body{
     font-family: 'Roboto', sans-serif;
     font-size: 1.6rem;
+}
+button, a{
+    text-decoration: none;
+    outline: none;
+    background: transparent;
+    border: none;
 }

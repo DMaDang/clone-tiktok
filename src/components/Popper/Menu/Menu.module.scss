@@ -1,0 +1,35 @@
+.more-menu {
+   width: 224px;
+   padding-bottom: 8px;
+   .item-menu {
+      margin-left: 0;
+      text-align: left;
+      color: var(--black);
+   }
+}
+.menu-popper {
+   padding-bottom: 8px;
+}
+.item-menu {
+   width: 100%;
+   &:hover {
+      background-color: rgba(22, 24, 35, 0.03) !important;
+   }
+}
+
+.header{
+   position: relative;
+   height: 50px;
+}
+.back-btn{
+   width: 50px;
+   height: 100%;
+   background-color: transparent;
+   cursor: pointer;
+}
+.header-title{
+   position: absolute;
+   top: 50%;
+   left: 40%;
+   transform: translate(-50%, -50%); 
+}
