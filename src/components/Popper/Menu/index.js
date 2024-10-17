@@ -9,7 +9,7 @@ import { useState } from 'react'
 const cx = classNames.bind(Styles)
 const defaultfn = () => {}
 
-function Menu({children, items = [], onChange = defaultfn }) {
+function Menu({children, items = [], hideOnClick=false, onChange = defaultfn }) {
    const [history, setHistory] = useState([{data: items}]);
    const current = history[history.length - 1]
     const renderItems = () => {
@@ -28,17 +28,20 @@ function Menu({children, items = [], onChange = defaultfn }) {
     }
     return ( 
            <Tippy
-              placement="bottom-start"
+              placement="bottom-end"
               delay={[0, 700]}
-            //   visible={true}
+              offset={[12, 8]}
+              hideOnClick={hideOnClick}
               interactive={true}
               render={(attrs) => (
-                 <div className={cx('more-menu')} tabindex="-1" {...attrs}>
+                 <div className={cx('more-menu')} tabIndex="-1" {...attrs}>
                     <PopperWrapper className={cx('menu-popper')}>
                         {history.length > 1 && <Header title="Language" onBack={() =>{
                            setHistory(prev => prev.slice(0, prev.length-1))
                         }}/>}
-                        {renderItems()}
+                        <div className={cx('menu-scrollable')}>
+                           {renderItems()}
+                        </div>
                     </PopperWrapper>
                  </div>
               )}
