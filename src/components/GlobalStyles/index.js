@@ -1,4 +1,5 @@
 import './GlobalStyles.scss'
+import PropTypes from 'prop-types';
 
 function GlobalStyles( {children} ) {
     return (
@@ -6,4 +7,8 @@ function GlobalStyles( {children} ) {
     )
 }
 
+GlobalStyles.propTypes = { 
+    children: PropTypes.node.isRequired,
+
+}
 export default GlobalStyles;

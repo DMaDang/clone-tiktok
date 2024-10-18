@@ -16,7 +16,7 @@ import {
 import HeadlessTippy from '@tippyjs/react/';
 import 'tippy.js/dist/tippy.css';
 
-import routesConfig from '~/config/routes'
+import config from '~/config'
 import Button from '~/components/Button';
 import { MessageIcon, MaiboxIcon } from '~/components/Icon';
 import Menu from '~/components/Popper/Menu';
@@ -141,7 +141,7 @@ function Header() {
    return (
       <header className={cx('wrapper')}>
          <div className={cx('inner')}>
-            <Link to={routesConfig.home}>
+            <Link to={config.routes.home}>
                <div className={cx('logo')}>
                   <svg xmlns="http://www.w3.org/2000/svg" height="42" width="118" alt="TikTok">
                      <g clipPath="url(#clip0)">
@@ -218,6 +218,8 @@ function Header() {
                   </svg>
                </div>
             </Link>
+
+            <Button></Button>
             <Search />
             <div className={cx('actions')}>
                {currentUser ? (
@@ -266,3 +268,6 @@ function Header() {
 }
 
 export default Header;
+
+
+

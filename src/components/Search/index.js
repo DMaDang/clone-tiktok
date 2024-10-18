@@ -2,6 +2,8 @@ import Tippy from '@tippyjs/react/headless';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import { useState, useEffect, useRef } from 'react';
+
+// import * as searchServices from '~/services/searchService'
 import classNames from 'classnames/bind';
 import styles from './Search.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -51,7 +53,7 @@ function Search() {
                   <PopperWrapper>
                      <h4 className={cx('search-title')}>Accounts</h4>
                      {searchResult.map((result) => (
-                        <AccountItem key={result.id} data={result} />
+                        <AccountItem onClick={handleHideResult} key={result.id} data={result} />
                      ))}
                      <AccountItem />
                   </PopperWrapper>
